@@ -14,7 +14,7 @@ console.log(fn(60));
 
 //1)реализовать метод принимающий строку и возвращающий является ли она полиндромом
 function isPalindrome(str: string): boolean {
-    let strReverse:string = str.split('').reverse().join('');
+    let strReverse: string = str.split('').reverse().join('');
     return strReverse === str;
 }
 
