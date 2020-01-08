@@ -1,0 +1,11 @@
+<app-todo-list
+  [list]="tasksList"
+  (deleteEvent)="deleteTodoItem($event)"
+  (completeEvent)="completeTodoItem($event)">
+</app-todo-list>
+<app-todo-list-filters
+  (showAllEvent) = "showAll()"
+  (showCompletedEvent) = "showCompleted()"
+  (showOutstandingEvent) = "showOutstanding()">
+</app-todo-list-filters>
+
