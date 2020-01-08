@@ -5,11 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './full-name-info.component.html',
   styleUrls: ['./full-name-info.component.css']
 })
-export class FullNameInfoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class FullNameInfoComponent {
 }
