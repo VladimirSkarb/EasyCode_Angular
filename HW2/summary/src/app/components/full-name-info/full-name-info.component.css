@@ -1,0 +1,21 @@
+img {
+  width: 250px;
+  padding-right: 30px;
+}
+
+.info {
+  display: flex;
+  /*justify-content: space-between;*/
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.full_name {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 600;
+}

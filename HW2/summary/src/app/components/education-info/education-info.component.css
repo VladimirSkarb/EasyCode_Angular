@@ -1,0 +1,40 @@
+h2 {
+  font-size: 25px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.education_info {
+  margin-top: 50px;
+}
+
+.education_university {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.education_specialty {
+  font-size: 18px;
+}
+
+.education_year {
+  color: darkgrey;
+}
+
+.education_courses-block {
+  margin-top: 50px;
+}
+
+.education_courses-header {
+  margin-bottom: 0;
+}
+
+.education_courses {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.education_course {
+  padding-right: 50px;
+}
