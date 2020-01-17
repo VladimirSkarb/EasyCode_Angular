@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { Todo } from "../../interfaces/Todo";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Todo } from '../../interfaces/Todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,8 +8,8 @@ import { Todo } from "../../interfaces/Todo";
 })
 export class TodoListComponent {
   @Input() list: Array<Todo>;
-  @Output() deleteEvent = new EventEmitter;
-  @Output() completeEvent = new EventEmitter;
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter;
+  @Output() completeEvent: EventEmitter<number> = new EventEmitter;
 
   onDeleteItem(id: number): void {
     this.deleteEvent.emit(id);

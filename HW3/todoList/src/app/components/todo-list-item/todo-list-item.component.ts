@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Todo} from "../../interfaces/Todo";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Todo} from '../../interfaces/Todo';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -8,10 +8,10 @@ import {Todo} from "../../interfaces/Todo";
 })
 export class TodoListItemComponent {
   @Input() item: Todo;
-  @Output() deleteEvent = new EventEmitter;
-  @Output() completeEvent = new EventEmitter;
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter;
+  @Output() completeEvent: EventEmitter<number> = new EventEmitter;
 
-  textBtn: String = 'Complete';
+  textBtn: string = 'Complete';
 
   deleteItem(): void {
     this.deleteEvent.emit(this.item.id);
@@ -25,5 +25,4 @@ export class TodoListItemComponent {
     }
     this.completeEvent.emit(this.item.id);
   }
-
 }
