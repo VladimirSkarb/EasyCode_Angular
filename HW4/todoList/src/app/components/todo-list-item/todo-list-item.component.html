@@ -1,0 +1,18 @@
+<li class="list-group-item"
+    [ngClass]="{'completed': item.isCompleted}">
+  <h5 *ngIf="!formEdit">{{ item.title }}</h5>
+  <p *ngIf="!formEdit">{{ item.body }}</p>
+  <form (ngSubmit)="onSubmit(mainForm)" #mainForm="ngForm" *ngIf="formEdit">
+    <input [(ngModel)]="todoForm.title" type="text" name="title" class="form-control" #title = "ngModel" required>
+    <div class="alert alert-danger mt-2" *ngIf="title.invalid && title.dirty">Input is required</div>
+    <input [(ngModel)]="todoForm.body" type="text" name="body" class="form-control mt-2">
+    <button class="btn btn-success mt-2" type="submit" [disabled]="title.invalid">Save</button>
+  </form>
+  <div class="d-flex mt-2">
+    <div class="btn-group">
+      <button class="btn btn-danger" (click)="deleteItem()">Delete</button>
+      <button class="btn btn-primary" (click)="completeItem()" *ngIf="!formEdit">{{ completeBtn }}</button>
+    </div>
+    <button class="btn btn-warning ml-auto" (click)="editItem()">{{ editBtn }}</button>
+  </div>
+</li>
