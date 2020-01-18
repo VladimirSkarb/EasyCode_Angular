@@ -8,8 +8,8 @@ import {Todo} from '../../interfaces/Todo';
 })
 export class TodoListItemComponent {
   @Input() item: Todo;
-  @Output() deleteEvent: EventEmitter<number> = new EventEmitter;
-  @Output() completeEvent: EventEmitter<number> = new EventEmitter;
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter();
+  @Output() completeEvent: EventEmitter<number> = new EventEmitter();
 
   textBtn: string = 'Complete';
 
