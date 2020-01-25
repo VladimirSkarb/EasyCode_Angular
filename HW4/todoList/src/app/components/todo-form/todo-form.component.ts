@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { CrudTodo } from '../../interfaces/CrudTodo';
 
 @Component({
   selector: 'app-todo-form',
@@ -6,16 +8,16 @@ import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent {
-  @Output() submitEvent: EventEmitter<object> = new EventEmitter();
-  @ViewChild('mainForm', {static: false}) form;
-  todoForm = {
+  @Output() submitEvent: EventEmitter<CrudTodo> = new EventEmitter();
+  @ViewChild('mainForm', {static: false}) form: NgForm;
+
+  todoForm: CrudTodo = {
     title: '',
     body: '',
   };
 
-  onSubmit(form) {
+  onSubmit() {
     this.submitEvent.emit({...this.todoForm});
-    form.resetForm();
+    this.form.resetForm();
   }
-
 }

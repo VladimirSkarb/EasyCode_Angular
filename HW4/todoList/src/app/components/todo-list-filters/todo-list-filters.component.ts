@@ -6,9 +6,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./todo-list-filters.component.css']
 })
 export class TodoListFiltersComponent {
-  @Output() showAllEvent: EventEmitter<number> = new EventEmitter;
-  @Output() showCompletedEvent: EventEmitter<number> = new EventEmitter;
-  @Output() showOutstandingEvent: EventEmitter<number> = new EventEmitter;
+  @Output() showAllEvent: EventEmitter<number> = new EventEmitter();
+  @Output() showCompletedEvent: EventEmitter<number> = new EventEmitter();
+  @Output() showOutstandingEvent: EventEmitter<number> = new EventEmitter();
 
   showAll(): void {
     this.showAllEvent.emit();

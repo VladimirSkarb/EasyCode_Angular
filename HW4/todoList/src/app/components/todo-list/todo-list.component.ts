@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Todo } from '../../interfaces/Todo';
+import { CrudTodo } from '../../interfaces/CrudTodo';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,9 +9,9 @@ import { Todo } from '../../interfaces/Todo';
 })
 export class TodoListComponent {
   @Input() list: Array<Todo>;
-  @Output() deleteEvent: EventEmitter<number> = new EventEmitter;
-  @Output() completeEvent: EventEmitter<number> = new EventEmitter;
-  @Output() saveEvent: EventEmitter<object> = new EventEmitter;
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter();
+  @Output() completeEvent: EventEmitter<number> = new EventEmitter();
+  @Output() saveEvent: EventEmitter<object> = new EventEmitter();
 
   onDeleteItem(id: number): void {
     this.deleteEvent.emit(id);
@@ -20,7 +21,7 @@ export class TodoListComponent {
     this.completeEvent.emit(id);
   }
 
-  onSaveItem(item: object): void {
+  onSaveItem(item: CrudTodo): void {
     this.saveEvent.emit(item);
   }
 }

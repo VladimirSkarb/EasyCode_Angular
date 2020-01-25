@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Todo} from '../../interfaces/Todo';
+import { CrudTodo } from '../../interfaces/CrudTodo';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -8,12 +9,11 @@ import {Todo} from '../../interfaces/Todo';
 })
 export class TodoListItemComponent {
   @Input() item: Todo;
-  @Output() deleteEvent: EventEmitter<number> = new EventEmitter;
-  @Output() completeEvent: EventEmitter<number> = new EventEmitter;
-  @Output() saveEvent: EventEmitter<object> = new EventEmitter;
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter();
+  @Output() completeEvent: EventEmitter<number> = new EventEmitter();
+  @Output() saveEvent: EventEmitter<object> = new EventEmitter();
 
-  @ViewChild('mainForm', {static: false}) form;
-  todoForm = {
+  todoForm: CrudTodo = {
     title: '',
     body: '',
   };
@@ -38,11 +38,10 @@ export class TodoListItemComponent {
   editItem(): void {
     if (this.formEdit) {
       this.editBtn = 'Edit';
-      this.formEdit = false;
     } else {
       this.editBtn = 'Cancel';
-      this.formEdit = !this.formEdit;
     }
+    this.formEdit = !this.formEdit;
     this.todoForm.title = this.item.title;
     this.todoForm.body = this.item.body;
   }

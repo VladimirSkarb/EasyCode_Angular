@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo } from './interfaces/Todo';
+import { CrudTodo} from './interfaces/CrudTodo';
 
 @Component({
   selector: 'app-root',
@@ -65,7 +66,7 @@ export class AppComponent {
     this.tasksList = this.todoList.filter( (item: Todo) => item.isCompleted === false);
   }
 
-  onFormSubmit(todo): void {
+  onFormSubmit(todo: CrudTodo): void {
     const newTodo: Todo = {
       ...todo,
       isCompleted: false,
@@ -74,8 +75,8 @@ export class AppComponent {
     this.todoList.push(newTodo);
   }
 
-  saveTodoItem(item): void {
-    const editedItem = this.todoList.find(item => item.id === item.id);
+  saveTodoItem(item: Todo): void {
+    const editedItem = this.todoList.find(elem => elem.id === item.id);
     editedItem.title = item.title;
     editedItem.body = item.body;
   }
